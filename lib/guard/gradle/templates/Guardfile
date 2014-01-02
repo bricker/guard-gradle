@@ -1,0 +1,4 @@
+guard :gradle do
+  watch(%r{^src/(.+)\.java$})
+  watch(%r{^src/(.+)\.xml$})
+end

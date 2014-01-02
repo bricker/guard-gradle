@@ -3,6 +3,12 @@
 Build your Java projects with Gradle as you work.
 
 
+### Why?
+
+I don't like any of the Android IDE's so I'm determined replicate all of their
+useful features at the command line or Sublime plugins.
+
+
 ## Installation
 
 Create a Gemfile that looks like:

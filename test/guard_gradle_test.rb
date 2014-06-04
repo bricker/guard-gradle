@@ -4,12 +4,12 @@ require 'mocha/test_unit'
 
 require File.expand_path(File.dirname(__FILE__) + '/../lib/guard/gradle')
 
-class GuardGradleTest  < Test::Unit::TestCase
+class GuardGradleTest < Test::Unit::TestCase
 
 	def test_single_should_be_executed
 		plugin = Guard::Gradle.new
 		expected = 'User'
-		plugin.expects(:fire_command).with("./gradlew test -Dtest.single=#{expected}")
+		plugin.expects(:fire_command).with("./gradlew test -Dtest.single=#{expected} --daemon")
 		Dir.expects(:glob).returns([true])
 		plugin.run_on_changes [expected]
 	end

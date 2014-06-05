@@ -6,10 +6,10 @@ require 'guard/gradle/version'
 Gem::Specification.new do |spec|
   spec.name          = 'guard-gradle'
   spec.version       = Guard::GradleVersion::VERSION
-  spec.authors       = ['Bryan Ricker']
-  spec.email         = ['bricker88@gmail.com']
-  spec.description   = %q{Guard plugin for Gradle builds}
-  spec.summary       = %q{Build your Java projects as you work.}
+  spec.authors       = ['Bryan Ricker', 'Andrew Glover']
+  spec.email         = ['bricker88@gmail.com', 'ajglover@gmail.com']
+  spec.description   = %q{Continuous Testing Guard plugin for Gradle}
+  spec.summary       = %q{Build & test your Java projects continuously as you work.}
   spec.homepage      = 'https://github.com/bricker/guard-gradle'
   spec.license       = 'MIT'
 
@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'guard', '~> 2.2.5'
+  spec.add_dependency 'guard', '~> 2.6.1'
   spec.add_development_dependency 'test-unit', '>= 2.5.5'
   spec.add_development_dependency 'mocha', '>= 1.0.0'
 end

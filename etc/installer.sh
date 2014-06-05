@@ -14,7 +14,7 @@ echo 'Now installing required Guard::Gradle'
 sleep 1
 bundle install --path vendor
 
-echo 'Initializing the Guard Nebula plugin'
+echo 'Initializing the Guard Gradle plugin'
 sleep 1
 bundle exec guard init gradle
 
@@ -24,4 +24,13 @@ cat <<EOF > guard.sh
 bundle exec guard
 EOF
 
+if [ -e '.git' ];
+then
+   echo 'Updating .gitignore file'
+   echo 'vendor/' >> .gitignore
+   echo '.bundle/' >> .gitignore
+fi
+
 chmod +x guard.sh
+
+sleep 1

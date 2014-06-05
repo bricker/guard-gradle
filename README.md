@@ -28,7 +28,7 @@ If you see something like `ruby: command not found` then you need to [install Ru
 We've made this super easy. Open up a terminal, `cd` to your desired project, and type:
 
 ```bash
-wget --no-check-certificate https://github.com/aglover/guard-gradle/blob/master/etc/installer.sh && bash installer.sh
+curl https://raw.githubusercontent.com/bricker/guard-gradle/master/etc/installer.sh | bash -
 ```
 
 It's important you do this in the root directory of a project you wish to use Gradle::Guard in. This plugin is designed to work on individual project instances, much like a `build.gradle` file is unique to a project. 

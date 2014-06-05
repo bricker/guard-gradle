@@ -16,7 +16,7 @@ bundle install --path vendor
 
 echo 'Initializing the Guard Nebula plugin'
 sleep 1
-bundle exec guard init nebula
+bundle exec guard init gradle
 
 echo 'This file will delete itself. Going forward to start Guard, run the guard.sh script'
 
@@ -25,7 +25,3 @@ bundle exec guard
 EOF
 
 chmod +x guard.sh
-
-sleep 1
-
-rm install-guard.sh

@@ -12,7 +12,7 @@ What's Guard you ask? Good question Ruby tyro.
 
 ## Installation
 
-It's assumed you're more familiar with Java than you are with Ruby (after all, this is a Gradle tool, right?!); consequently, it's super easy to get going with Guard::Gradle _provided you have Ruby installed_. No fear OS X users, however! OS X comes with Ruby; Mavericks ships with Ruby 2.0! 
+It's assumed you're more familiar with Java than you are with Ruby (after all, this is a Gradle tool, right?!); consequently, it's super easy to get going with Guard::Gradle _provided you have Ruby installed_. 
 
 Open up a terminal and type:
 
@@ -21,9 +21,9 @@ $ ruby -v
 ruby 2.0.0p451 (2014-02-24 revision 45167) [universal.x86_64-darwin13]
 ```
 
-If you see something like `ruby`: command not found` then you need to [install Ruby](https://www.ruby-lang.org/en/installation/). 
+If you see something like `ruby: command not found` then you need to [install Ruby](https://www.ruby-lang.org/en/installation/). 
 
-### For those who want to get going ASAP
+#### For those who want to get going ASAP
 
 We've made this super easy. Open up a terminal, `cd` to your desired project, and type:
 
@@ -41,7 +41,7 @@ The above script will install:
 
 Therefore, after you run the command above, you'll be left with a script dubbed `guard.sh` -- just execute that script to start Guard::Gradle!
 
-### For those familiar w/Ruby
+#### For those familiar w/Ruby
 
 Guard::Gradle is intended to work with project instances; accordingly, you'll need to follow these steps for each project. 
 

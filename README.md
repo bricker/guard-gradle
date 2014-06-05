@@ -25,6 +25,22 @@ If you see something like `ruby`: command not found` then you need to [install R
 
 ### For those who want to get going ASAP
 
+We've made this super easy. Open up a terminal, `cd` to your desired project, and type:
+
+```bash
+wget --no-check-certificate https://github.com/aglover/guard-gradle/blob/master/etc/installer.sh && bash installer.sh
+```
+
+It's important you do this in the root directory of a project you wish to use Gradle::Guard in. This plugin is designed to work on individual project instances, much like a `build.gradle` file is unique to a project. 
+
+The above script will install:
+  * Bundler 
+  * Guard::Gradle
+  * Create default Guard file
+  * Create a Guard launcher script
+
+Therefore, after you run the command above, you'll be left with a script dubbed `guard.sh` -- just execute that script to start Guard::Gradle!
+
 ### For those familiar w/Ruby
 
 Guard::Gradle is intended to work with project instances; accordingly, you'll need to follow these steps for each project. 

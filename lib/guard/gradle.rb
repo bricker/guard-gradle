@@ -10,8 +10,8 @@ module Guard
     @multi_projs = false
 
     def initialize(options = {})
-      if options.has_key? :multi_projects
-        @multi_projs = options[:multi_projects]
+      if options.has_key? :multi_project
+        @multi_projs = options[:multi_project]
       end
       super
     end

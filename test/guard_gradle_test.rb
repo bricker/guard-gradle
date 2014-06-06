@@ -21,4 +21,12 @@ class GuardGradleTest < Test::Unit::TestCase
 		Dir.expects(:glob).returns([])
 		plugin.run_on_changes [expected]
 	end
+
+	def test_for_multi_projects
+		plugin = Guard::Gradle.new({multi_project: true})
+		expected = 'Foo/User'
+		plugin.expects(:fire_command).with('./gradlew test -p Foo -Dtest.single=User --daemon')
+		Dir.expects(:glob).returns([true])
+		plugin.run_on_changes [expected]
+	end
 end

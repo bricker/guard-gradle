@@ -69,7 +69,7 @@ $ bundle exec guard init gradle
 The default `Guardfile` will look like this:
 
 ```ruby
-guard :nebula do
+guard :gradle do
   watch(%r{^src/main/(.+)\.*$}) { |m| m[1].split('.')[0].split('/')[-1] }
 end
 ```
@@ -96,6 +96,18 @@ This Guard plugin simply runs the `test` task on your Gradle project; the exact 
 Note, the plugin will try and execute the exact corresponding test for a changed file. 
 
 For example, if you change the file `DataCentuar.groovy`, if there is a corresponding `DataCentuarTest` or `DataCentuarSpec` _only_ that test is executed via the `-Dsingle.run` Gradle parameter. Otherwise, if no analogous test is found, the entire test suite is run.
+
+### Multi-project builds
+
+If you have a multi-project build, you can still use Guard:Gradle. You'll need to edit your `Guardfile` slightly by adding a special `multi_project` flag and passing in the project names. For instance, if you have a multi-project with two projects named "Foo" and "Bar", your `Guardfile` will need to look like so:
+
+```ruby
+guard :gradle, multi_projects: true do
+  watch(%r{^Foo/src/main/(.+)\.*$}) { |m|  "Foo/" +  m[1].split('.')[0].split('/')[-1]}
+  watch(%r{^Bar/src/main/(.+)\.*$}) { |m|  "Bar/" +  m[1].split('.')[0].split('/')[-1] }
+end
+```
+Be sure to have this `Guardfile` in the root of your project. 
 
 ## Notifications
 

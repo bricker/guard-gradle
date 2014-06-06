@@ -99,7 +99,7 @@ For example, if you change the file `DataCentuar.groovy`, if there is a correspo
 
 ### Multi-project builds
 
-If you have a multi-project build, you can still use Guard:Gradle. You'll need to edit your `Guardfile` slightly by adding a special `multi_project` flag and passing in the project names. For instance, if you have a multi-project with two projects named "Foo" and "Bar", your `Guardfile` will need to look like so:
+If you have a multi-project build, you can still use Guard::Gradle. You'll need to edit your `Guardfile` slightly by adding a special `multi_project` flag and passing in the project names. For instance, if you have a multi-project with two projects named "Foo" and "Bar", your `Guardfile` will need to look like so:
 
 ```ruby
 guard :gradle, multi_project: true do

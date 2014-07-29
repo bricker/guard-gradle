@@ -5,14 +5,31 @@ require 'guard/plugin'
 module Guard
   class Gradle < Plugin
 		
-    DEF_CMD = './gradlew test'
+    @command = './gradlew'
+    @task = 'test'
 
     @multi_projs = false
+    @flags = false
 
     def initialize(options = {})
       if options.has_key? :multi_project
         @multi_projs = options[:multi_project]
       end
+      if options.has_key? :command
+        @command = options[:command]
+      end
+      if options.has_key? :task
+        @task = options[:task]
+      end
+      if options.has_key? :flags
+        @flags = options[:flags]
+      end
+
+      @DEF_CMD = "#{@command} #{@task}"
+      if @flags
+        @DEF_CMD = "#{@DEF_CMD} #{@flags}"
+      end
+
       super
     end
 

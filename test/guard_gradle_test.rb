@@ -29,4 +29,28 @@ class GuardGradleTest < Test::Unit::TestCase
 		Dir.expects(:glob).returns([true])
 		plugin.run_on_changes [expected]
 	end
+
+  def test_for_configurable_command
+		plugin = Guard::Gradle.new({command: 'gradle'})
+		expected = 'User'
+		plugin.expects(:fire_command).with("gradle test -Dtest.single=#{expected} --daemon")
+		Dir.expects(:glob).returns([true])
+		plugin.run_on_changes [expected]
+  end
+
+  def test_for_configurable_task
+		plugin = Guard::Gradle.new({task: 'mySpecialTask'})
+		expected = 'User'
+		plugin.expects(:fire_command).with("./gradlew mySpecialTask -Dtest.single=#{expected} --daemon")
+		Dir.expects(:glob).returns([true])
+		plugin.run_on_changes [expected]
+  end
+
+  def test_for_configurable_flags
+		plugin = Guard::Gradle.new({flags: '-q -s'})
+		expected = 'User'
+		plugin.expects(:fire_command).with("./gradlew test -q -s -Dtest.single=#{expected} --daemon")
+		Dir.expects(:glob).returns([true])
+		plugin.run_on_changes [expected]
+  end
 end

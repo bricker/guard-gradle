@@ -124,7 +124,7 @@ available.
 For example, if you want to run with quiet logging, using a global gradle, and
 the `cleanTest test` gradle task, your `Guardfile` would look something like this:
 
-```
+```ruby
 guard :gradle, command: 'gradle', task: 'cleanTest test', flags: '--quiet' do
   watch(%r{^src/main/(.+)\.*$}) { |m| m[1].split('.')[0].split('/')[-1] }
 end

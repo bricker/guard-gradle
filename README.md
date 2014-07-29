@@ -109,6 +109,27 @@ end
 ```
 Be sure to have this `Guardfile` in the root of your project. 
 
+### Configurable command/task/flags
+
+If you want to customize how gradle runs, there are several configuration flags
+available.
+
+* `command` specifies the command line program to run.  Can be useful if your
+ team wants to use globally installed gradle instead of the gradle wrapper.  Default is
+ `./gradlew`
+* `task` specifies the gradle task.  Default is `test`
+* `flags` allows additional gradle command line flags, such as `--quiet`,
+ `--stacktrace` or others.  Default is false (no flags)
+
+For example, if you want to run with quiet logging, using a global gradle, and
+the `cleanTest test` gradle task, your `Guardfile` would look something like this:
+
+```ruby
+guard :gradle, command: 'gradle', task: 'cleanTest test', flags: '--quiet' do
+  watch(%r{^src/main/(.+)\.*$}) { |m| m[1].split('.')[0].split('/')[-1] }
+end
+```
+
 ## Notifications
 
 Guard works natively with Growl. There are other options as well -- feel free to check out the [Guard wiki page](https://github.com/guard/guard/wiki/System-notifications) for more information.

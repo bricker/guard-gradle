@@ -109,6 +109,18 @@ end
 ```
 Be sure to have this `Guardfile` in the root of your project. 
 
+### Configurable command/task/flags
+
+If you want to customize how gradle runs, there are several configuration flags
+available.
+
+* `command` specifies the command line program to run.  Can be useful if your
+ team wants to use globally installed gradle instead of the gradle wrapper.  Default is
+ `./gradlew`
+* `task` specifies the gradle task.  Default is `test`
+* `flags` allows additional gradle command line flags, such as `--quiet`,
+ `--stacktrace` or others.  Default is false (no flags)
+
 ## Notifications
 
 Guard works natively with Growl. There are other options as well -- feel free to check out the [Guard wiki page](https://github.com/guard/guard/wiki/System-notifications) for more information.

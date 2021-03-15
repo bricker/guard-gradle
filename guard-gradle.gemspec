@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'guard', '~> 2.6.1'
+  spec.add_dependency 'guard', '~> 2.16.2'
   spec.add_development_dependency 'test-unit', '>= 2.5.5'
   spec.add_development_dependency 'mocha', '>= 1.0.0'
 end
